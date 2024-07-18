@@ -48,10 +48,11 @@
 }
 .header_items_right .box{
     color: white;
-    padding: 4px 13px;
+    padding: 10px 18px;
     background-color: #00554C;
     border: 1px;
     border-style: solid;
+    font-size: 18px;
 }
 .header_item:hover{
 

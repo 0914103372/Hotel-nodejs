@@ -20,9 +20,6 @@ export const customer = sequelize.define('customers',{
         type:DataTypes.STRING,
     },
     password:{
-        validate:{
-            len:[0,10]
-        },
         type:DataTypes.STRING
     },
     gender:{
@@ -44,7 +41,14 @@ export const customer = sequelize.define('customers',{
     },
     adrress:{
         type:DataTypes.STRING
+    },
+    OTP:{
+        type:DataTypes.STRING
+    },
+    OTPTIME:{
+        type:DataTypes.DATE
     }
+    
 }, {
     tableName:'customer'
 })

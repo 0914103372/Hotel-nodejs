@@ -1,13 +1,13 @@
 import { removeTicks } from 'sequelize/lib/utils'
 import {customer} from '../model/user-model.js'
 import { sequelize } from '../model/database.js'
-
+import bcrypt from 'bcrypt'
 
 
 export const selectAllCustomer = async ()=>{
 const listCustomer =  await customer.findAll()
 .then(Customers=>{
-        console.log(Customers)
+      
         return Customers
 })
 .catch(err=>{
@@ -43,6 +43,8 @@ export const selectCustomerWithId = async (id)=>{
 
 export const createCustomer = async (Customer)=>{
     Customer.customerId = await createId()
+    const salt = await bcrypt.genSalt(10)
+    Customer.password = await bcrypt.hash(Customer.password,salt)
     const create= await customer.create(Customer)
     .then( customers =>{
         console.log("create success")
@@ -56,16 +58,14 @@ export const createCustomer = async (Customer)=>{
     return create
 }
 
-export const updateCustomer = async (Customer)=>{
-    const checkCustomer = await customer.findByPk(Customer.customerId)
+export const updateCustomer = async (column,customerId)=>{
+    const checkCustomer = await customer.findByPk(customerId)
         if(!checkCustomer)
         {
                 console.log('Customer ko ton tai')
                 return
         }
-    const update = await customer.update(Customer,{where: {
-        customerId: Customer.customerId
-    }})
+     await checkCustomer.update(column)
     .then(customerResult=>{
         console.log('update success')
         console.log(customerResult.dataValues)
