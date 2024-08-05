@@ -9,8 +9,8 @@ await sequelize.authenticate()
     console.log('thanhcong')
 })
 .catch((err)=>{
-    console.log(e)
-})
+    console.log(err)
+})  
 
 
 

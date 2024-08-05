@@ -27,7 +27,7 @@
 .header{
     width: 100%;
     height: 70px;
-    background-color: rgb(25, 117, 49);
+    background-image: linear-gradient(1,rgb(36, 174, 72),rgb(25, 117, 49));
     padding: 0 100px;
 }
 .logo img{
