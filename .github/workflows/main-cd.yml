@@ -27,7 +27,7 @@ jobs:
         chmod 600 id_rsa
         ssh -i id_rsa ubuntu@3.25.83.75 << 'EOF'
           docker-compose down
-          docker rmi tuducmanh2911/auth-node-app:latest
+          docker rmi tuducmanh2911/demo:v4
           docker-compose up -d
         EOF
         rm id_rsa
