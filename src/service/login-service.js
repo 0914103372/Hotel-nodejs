@@ -5,7 +5,7 @@ import  jwt  from 'jsonwebtoken'
 import {updateCustomer} from './user-service.js'
 import nml from 'nodemailer'
 import env from 'dotenv'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 import hbs from 'nodemailer-express-handlebars'
 import path from 'path'
 env.config()

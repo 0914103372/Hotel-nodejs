@@ -11,7 +11,7 @@ import { configDotenv } from 'dotenv';
 import { engine } from 'express-handlebars';
 import cookieParser from 'cookie-parser'
 const app = express()
-const port = 3000
+const port = 8080
 
 app.use(cookieParser());
 app.use(express.static(path.resolve(process.cwd(),'resource')))

@@ -1,7 +1,7 @@
 import { removeTicks } from 'sequelize/lib/utils'
 import {customer} from '../model/user-model.js'
 import { sequelize } from '../model/database.js'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 
 
 export const selectAllCustomer = async ()=>{
